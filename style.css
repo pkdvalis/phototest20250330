@@ -47,7 +47,8 @@ body {
   width: 50%;
   margin: auto;
   position: fixed;
-  left: 10px;
+  text-align: right;
+  right: 10px;
   background-color: white;
   
 }
