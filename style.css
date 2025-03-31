@@ -251,6 +251,7 @@ ul {
     display: block;
     background-color: rgba(250, 250, 250, 1);
     width: 100%;
+    padding: 15px;
   }
   .social {
     display:flex;
