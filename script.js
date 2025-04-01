@@ -196,7 +196,7 @@ for (let i = 0; i < totalImages; i++) {
 //mobile swipe
 var initialTouchX, initialTouchY,
  finalTouchX, finalTouchY;
-var swipeThreshold = 100; 
+var swipeThreshold = 50; 
 var dynamicStyle = 
 document.createElement("style");
 document.body.
