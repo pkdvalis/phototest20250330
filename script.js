@@ -225,11 +225,12 @@ function handleTouch(startX, endX,
 
 
 var swipeLeft = () => {
-    prevImage()
+    nextImage()
 };
 
 var swipeRight = () => {
-    nextImageImage()
+    
+    prevImage()
 };
 
 
