@@ -194,6 +194,7 @@ for (let i = 0; i < totalImages; i++) {
 
 
 //mobile swipe
+/*
 var initialTouchX, initialTouchY,
  finalTouchX, finalTouchY;
 var swipeThreshold = 50; 
@@ -255,3 +256,4 @@ window.onload = function () {
         finalTouchX, swipeLeft, swipeRight);
     });
 };
+*/
