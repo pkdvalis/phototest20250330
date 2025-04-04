@@ -12,7 +12,7 @@ const totalImages = document.querySelectorAll("img").length;
 let curImageDisplay;
 const modal = document.querySelector(".overlay");
 
-
+/*
 const pageTransition = () => {
   const links = document.querySelectorAll("a");
   links.forEach((link) => {
@@ -28,7 +28,7 @@ const pageTransition = () => {
     });
   });
 };
-
+*/
 
 document.addEventListener("DOMContentLoaded", pageTransition);
 
