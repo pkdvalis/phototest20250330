@@ -12,6 +12,7 @@ const totalImages = document.querySelectorAll("img").length;
 let curImageDisplay;
 const modal = document.querySelector(".overlay");
 
+/*
 const pageTransition = () => {
   const links = document.querySelectorAll("a");
   links.forEach((link) => {
@@ -27,6 +28,7 @@ const pageTransition = () => {
     });
   });
 };
+*/
 
 document.addEventListener("DOMContentLoaded", pageTransition);
 
@@ -194,7 +196,7 @@ for (let i = 0; i < totalImages; i++) {
 
 
 //mobile swipe
-/*
+
 var initialTouchX, initialTouchY,
  finalTouchX, finalTouchY;
 var swipeThreshold = 50; 
@@ -256,4 +258,4 @@ window.onload = function () {
         finalTouchX, swipeLeft, swipeRight);
     });
 };
-*/
+
