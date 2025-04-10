@@ -127,10 +127,12 @@ function displayImg(i) {
     <p class="close" onclick="closeModal()">Esc</p>
     
         <img id="displayimage" src="">
+        <p id="caption">${displayImages[i].alt}</p>
         <div id="imageLeft" onclick="prevImage()"></div>
         <div id="imageRight" onclick="nextImage()"></div>
     
     `;
+    console.log("alt",displayImages[i].alt)
 
   if (vw > 480) {
     modal.innerHTML += `
@@ -144,21 +146,9 @@ function displayImg(i) {
   displayImage.src = displayImages[i].src;
 
   //make image clickable previous and next
-  //imageWrap = document.getElementById("imageWrap");
   imageLeft = document.getElementById("imageLeft");
   imageRight = document.getElementById("imageRight");
-  //console.log("imagewidth", displayImage.width);
-  /*
-  displayImage.onload = function () {
-    //imageWrap.style.width = `${displayImage.width + 48}px`;
-    //imageWrap.style.height = `${displayImage.height}px`;
-    //imageLeft.style.width = `${displayImage.width * 0.5}px`;
-    imageLeft.style.height = `${displayImage.height}px`;
-    imageRight.style.width = `${displayImage.width * 0.5}px`;
-    imageRight.style.height = `${displayImage.height}px`;
-    console.log(imageRight.style.height, imageRight.style.width);
-  };*/
-
+  
   modal.classList.remove("hide");
   console.log("imagewidth", displayImage.offsetWidth);
   displayImage.addEventListener("click", null);
@@ -191,7 +181,10 @@ for (let i = 0; i < totalImages; i++) {
     .item(i)
     .getAttribute("src")
     .replace(/webp/g, "jpg");
-  console.log("displayiamges", displayImages[i]);
+  displayImages[i].alt = images
+    .item(i)
+    .getAttribute("alt");
+  //console.log("displayiamges", displayImages[i]);
 }
 
 
