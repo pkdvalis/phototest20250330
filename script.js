@@ -12,6 +12,8 @@ const totalImages = document.querySelectorAll("img").length;
 let curImageDisplay;
 const modal = document.querySelector(".overlay");
 
+//fadeout page transitions
+/*
 const pageTransition = () => {
   const links = document.querySelectorAll("a");
   links.forEach((link) => {
@@ -29,9 +31,10 @@ const pageTransition = () => {
 };
 
 document.addEventListener("DOMContentLoaded", pageTransition);
+*/
 
+//keyboard nav
 document.addEventListener("keydown", (e) => {
-  //load text
   console.log(e.code);
   if (e.code == "Escape") {
     closeModal();
@@ -60,6 +63,7 @@ function imgtoDiv() {
     window.innerHeight || 0
   );
 
+  //mobile device
   if (vw <= 480) {
     document.getElementsByClassName("menu")[0].classList.add("hide");
     document.getElementById("mobiletop").style.display = "block";
@@ -146,7 +150,8 @@ function displayImg(i) {
   imageRight = document.getElementById("imageRight");
 
   modal.classList.remove("hide");
-  console.log("imagewidth", displayImage.offsetWidth);
+
+  //close modal click outside image
   displayImage.addEventListener("click", null);
   modal.addEventListener(
     "click",
@@ -172,18 +177,17 @@ imgtoDiv();
 //preload Display Images
 for (let i = 0; i < totalImages; i++) {
   displayImages[i] = new Image();
-  //console.log(displayImages[i],images.item(i))
+
   displayImages[i].src = images
     .item(i)
     .getAttribute("src")
     .replace(/webp/g, "jpg");
-  displayImages[i].alt = images.item(i).getAttribute("alt");
 
-  //console.log("displayiamges", displayImages[i]);
+  displayImages[i].alt = images.item(i).getAttribute("alt");
 }
 
 //mobile swipe
-
+/*
 var initialTouchX, initialTouchY, finalTouchX, finalTouchY;
 var swipeThreshold = 50;
 var dynamicStyle = document.createElement("style");
@@ -226,3 +230,4 @@ window.onload = function () {
     handleTouch(initialTouchX, finalTouchX, swipeLeft, swipeRight);
   });
 };
+*/

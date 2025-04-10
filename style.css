@@ -1,51 +1,47 @@
+/*
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-
-
 .fade-out {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-
+*/
 
 body {
-    font-family: 'Inter Tight','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-optical-sizing:auto;
-    font-style: normal;
-    overflow-x: hidden;
-    padding: 20px;
-    animation: fadeIn 0.5s ease;
-    
-    
+  font-family: "Inter Tight", "Lucida Sans", "Lucida Sans Regular",
+    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  overflow-x: hidden;
+  padding: 20px;
+  /*animation: fadeIn 0.5s ease;*/
 }
 
 #mobiletop {
   display: none;
-  position:fixed;
-  top:0;
-  left:0;
-  padding: 10px
-  animation: fadeIn 1s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  /*animation: fadeIn 1s ease-in-out;*/
 }
 
 #mobiletop .name {
   float: left;
-  margin:auto;
+  margin: auto;
 }
 
 #hamburger {
-  margin:0;
+  margin: 0;
   height: 29;
   position: fixed;
-  top:8px;
+  top: 8px;
   right: 10px;
   cursor: pointer;
-  font-size:32px;
-  
-  
+  font-size: 32px;
 }
 
 #mobilemenu {
@@ -55,191 +51,162 @@ body {
   text-align: right;
   right: 10px;
   background-color: white;
-  
 }
 
-.menu{
-   -webkit-user-select: none; /* Safari */
-   -ms-user-select: none; /* IE 10 and IE 11 */
-   user-select: none; /* Standard syntax */
-    width: 200px;
-    position: fixed;
-    padding: 5px;
+.menu {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  width: 200px;
+  position: fixed;
+  padding: 5px;
 }
 .name {
   -webkit-user-select: text; /* Safari */
-  -ms-user-select:     text; /* IE 10 and IE 11 */
-  user-select:         text; /* Standard syntax */
+  -ms-user-select: text; /* IE 10 and IE 11 */
+  user-select: text; /* Standard syntax */
   font-size: 1.5rem;
   font-weight: bold;
-
 }
 .description {
-    font-size: 1rem;
-    font-weight:150;
+  font-size: 1rem;
+  font-weight: 150;
 }
 
 ul {
-    font-size: 1rem;
-    font-weight: 300;
-    list-style-type:none;
-    margin: 0;
-    padding: 0;
-    
-  }
-  
-  a {
-    display: block;
-    color: #000;
-    text-decoration: none;
-  }
-  
-  li a {
-    padding: 10px 16px;
-    
-  }
-  
-  li a.active {
-    text-decoration-line: underline;
-  }
-  
-  li a:hover:not(.active) {
-    text-decoration-line: underline;
-    color: darkslategrey;
-  }
-
-.social {
-    display: flex;
-    
-    
+  font-size: 1rem;
+  font-weight: 300;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-  .social a {
-    color: black;
-    display: block;
-    margin: 10px;
-    width: 23px;
-    
-        
-  }
+a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+}
 
-  .copy {
-    font-size:x-small;
-    font-weight:200;
+li a {
+  padding: 10px 16px;
+}
 
-  }
+li a.active {
+  text-decoration-line: underline;
+}
 
-  .gallery {
-    display: flex;
-    margin-left: 175px;
-    flex-direction: row;
-    max-width: calc(100vw-175);
-    flex-wrap:no-wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    
- 
-  }
+li a:hover:not(.active) {
+  text-decoration-line: underline;
+  color: darkslategrey;
+}
 
-  .videoGallery {
-    margin-left: 175px;
-  }
+.social {
+  display: flex;
+}
 
-  .videoBox {
-    margin: auto; 
-    padding: 5vw;
-    width: 80%; 
-    height: 480px;
-    
-   }
-   
-   iframe {
-     object-fit: contain;
-     width: 100%;
-     height: 100%;
-   }
+.social a {
+  color: black;
+  display: block;
+  margin: 10px;
+  width: 23px;
+}
+
+.copy {
+  font-size: x-small;
+  font-weight: 200;
+}
+
+.gallery {
+  display: flex;
+  margin-left: 175px;
+  flex-direction: row;
+  max-width: calc(100vw-175);
+  flex-wrap: no-wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.videoGallery {
+  margin-left: 175px;
+}
+
+.videoBox {
+  margin: auto;
+  padding: 5vw;
+  width: 80%;
+  height: 480px;
+}
+
+iframe {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
 
 .info {
-  margin-left:175px;
-  
-  width:50%;
+  margin-left: 175px;
+
+  width: 50%;
   padding: 20px;
 }
 
 .info img {
-  margin:20px auto;
+  margin: 20px auto;
   width: 100%;
-    
 }
 
 .info p {
   width: 80%;
   padding: 20px;
-  margin:auto;
-  
+  margin: auto;
 }
-
 
 .gallery div {
-    display: flex;
-    flex-direction: column;
-    flex-wrap:wrap;
-    
-    
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-  .gallery img {
-    width: 90%;
-    height: auto;
-    transition: filter 0.25s;
-    margin: 10%;
-    
-    
-    
-    
+.gallery img {
+  width: 90%;
+  height: auto;
+  transition: filter 0.25s;
+  margin: 10%;
 }
 .gallery img:hover {
-    filter: brightness(110%) opacity(50%) contrast(90%);
-    cursor:pointer;
-    
+  filter: brightness(110%) opacity(50%) contrast(90%);
+  cursor: pointer;
 }
-
-
 
 .hide {
   display: none;
 }
 
-
 @media only screen and (max-width: 480px) {
-  
   body {
-    padding:0px;
+    padding: 0px;
     border: none;
-    margin:0px;
+    margin: 0px;
     width: 100%;
   }
   .gallery {
     margin-left: 0px;
     margin-top: 50px;
-    
   }
   .gallery img {
     width: 90%;
     transition: filter 0.25s;
     margin: 10px;
-    
-}
+  }
   #displayimage {
     border: none !important;
     padding: 0 !important;
     margin: 0px !important;
-    position:fixed;
-    left:0;
+    position: fixed;
+    left: 0;
     display: block;
     object-fit: contain;
     width: 100%;
-    
   }
 
   #mobiletop {
@@ -247,23 +214,18 @@ ul {
     background-color: rgba(250, 250, 250, 1);
     width: 100%;
     padding: 15px;
-    
   }
   .social {
-    display:flex;
-    justify-content:flex-end;
- 
+    display: flex;
+    justify-content: flex-end;
   }
 
   .info {
-    margin:0px;
-    margin-top:60px;
+    margin: 0px;
+    margin-top: 60px;
     width: 100%;
-    padding:0px;
+    padding: 0px;
   }
-
-  
-
 }
 
 .overlay {
@@ -278,33 +240,30 @@ ul {
   background: rgba(255, 255, 255, 1);
   backdrop-filter: blur(1px);
   z-index: 1;
-  
 }
 
 #displayimage {
   border: 50px solid white;
   box-sizing: border-box;
-  height:100%;
+  height: 100%;
   /*animation: fadeIn 0.5s ease;*/
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-  
 }
 
 #caption {
-  position:absolute;
+  position: absolute;
   width: 100%;
   bottom: 20px;
   margin: auto;
   font-size: 1rem;
-  font-weight:175;
-  background-color: rgba(255,255,255,1);
+  font-weight: 175;
+  background-color: rgba(255, 255, 255, 1);
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
   z-index: 20;
-  
 }
 
 /*
@@ -323,15 +282,14 @@ ul {
 }
 */
 
-
 #imageLeft {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 50%;
   height: 100%;
   z-index: 5;
-  cursor:pointer;
+  cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
@@ -339,29 +297,24 @@ ul {
 
 #imageRight {
   position: absolute;
-  top:0;
-  right:0;
+  top: 0;
+  right: 0;
   width: 50%;
   height: 100%;
   z-index: 6;
-  cursor:pointer;
+  cursor: pointer;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
-
 }
-
-
-
 
 /* Next & previous buttons */
 .prev,
-.next
- {
+.next {
   cursor: pointer;
   position: absolute;
-  top:80%;
-  background-color: rgba(250, 250, 250, .75);
+  top: 80%;
+  background-color: rgba(250, 250, 250, 0.75);
   width: auto;
   padding: 50px;
   margin: auto;
@@ -397,7 +350,7 @@ ul {
   position: fixed;
   top: 2.5%;
   right: 5%;
-  color:black;
+  color: black;
   font-size: larger;
   cursor: pointer;
   width: auto;
@@ -410,8 +363,4 @@ ul {
   user-select: none;
   -webkit-user-select: none;
   z-index: 25;
-  
 }
-
-
-
