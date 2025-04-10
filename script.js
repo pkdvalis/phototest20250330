@@ -12,7 +12,6 @@ const totalImages = document.querySelectorAll("img").length;
 let curImageDisplay;
 const modal = document.querySelector(".overlay");
 
-
 const pageTransition = () => {
   const links = document.querySelectorAll("a");
   links.forEach((link) => {
@@ -28,7 +27,6 @@ const pageTransition = () => {
     });
   });
 };
-
 
 document.addEventListener("DOMContentLoaded", pageTransition);
 
@@ -94,14 +92,13 @@ function imgtoDiv() {
   //add images to div columns
   for (let i = 0; i < totalImages; i += columns) {
     for (let column = 1; column <= columns; column++) {
-  
       let image = i + column - 1;
       if (images.item(image)) {
         images.item(image).remove();
         images.item(image).onclick = function () {
           displayImg(image);
         };
-        
+
         document.getElementById("col" + column).appendChild(images.item(image));
       }
     }
@@ -121,7 +118,7 @@ function closeModal(e) {
 
 function displayImg(i) {
   curImageDisplay = i;
-  console.log(vw, (vw > 480));
+  console.log(vw, vw > 480);
 
   modal.innerHTML = `
     <p class="close" onclick="closeModal()">Esc</p>
@@ -132,23 +129,22 @@ function displayImg(i) {
         <div id="imageRight" onclick="nextImage()"></div>
     
     `;
-    console.log("alt",displayImages[i].alt)
+  console.log("alt", displayImages[i].alt);
 
   if (vw > 480) {
     modal.innerHTML += `
       <a class="prev" onclick="prevImage()">&#10094;</a>
       <a class="next" onclick="nextImage()">&#10095;</a>  
-      `
-  };
-    
-    
+      `;
+  }
+
   let displayImage = document.querySelector("#displayimage");
   displayImage.src = displayImages[i].src;
 
   //make image clickable previous and next
   imageLeft = document.getElementById("imageLeft");
   imageRight = document.getElementById("imageRight");
-  
+
   modal.classList.remove("hide");
   console.log("imagewidth", displayImage.offsetWidth);
   displayImage.addEventListener("click", null);
@@ -181,75 +177,52 @@ for (let i = 0; i < totalImages; i++) {
     .item(i)
     .getAttribute("src")
     .replace(/webp/g, "jpg");
-  displayImages[i].alt = images
-    .item(i)
-    .getAttribute("alt");
-    
+  displayImages[i].alt = images.item(i).getAttribute("alt");
+
   //console.log("displayiamges", displayImages[i]);
 }
 
-
 //mobile swipe
 
-var initialTouchX, initialTouchY,
- finalTouchX, finalTouchY;
-var swipeThreshold = 50; 
-var dynamicStyle = 
-document.createElement("style");
-document.body.
-appendChild(dynamicStyle);
+var initialTouchX, initialTouchY, finalTouchX, finalTouchY;
+var swipeThreshold = 50;
+var dynamicStyle = document.createElement("style");
+document.body.appendChild(dynamicStyle);
 
+function handleTouch(startX, endX, onSwipeLeft, onSwipeRight) {
+  var horizontalDistance = finalTouchX - initialTouchX;
+  var verticalDistance = finalTouchY - initialTouchY;
 
-function handleTouch(startX, endX,
-     onSwipeLeft, onSwipeRight) {
-    var horizontalDistance = 
-    finalTouchX - initialTouchX;
-    var verticalDistance = 
-    finalTouchY - initialTouchY;
-
-    if (Math.abs(horizontalDistance) >
-     Math.abs(verticalDistance) &&
-      Math.abs(horizontalDistance) >
-       swipeThreshold) {
-        if (finalTouchX - 
-            initialTouchX < 0) {
-            onSwipeLeft(); 
-        } else {
-            onSwipeRight(); 
-        }
+  if (
+    Math.abs(horizontalDistance) > Math.abs(verticalDistance) &&
+    Math.abs(horizontalDistance) > swipeThreshold
+  ) {
+    if (finalTouchX - initialTouchX < 0) {
+      onSwipeLeft();
+    } else {
+      onSwipeRight();
     }
+  }
 }
 
-
 var swipeLeft = () => {
-    nextImage()
+  nextImage();
 };
 
 var swipeRight = () => {
-    
-    prevImage()
+  prevImage();
 };
-
 
 window.onload = function () {
-    window.addEventListener
-    ('touchstart', function (event) {
-        initialTouchX = 
-        event.touches[0].clientX;
-        initialTouchY =
-         event.touches[0].clientY;
-    });
+  window.addEventListener("touchstart", function (event) {
+    initialTouchX = event.touches[0].clientX;
+    initialTouchY = event.touches[0].clientY;
+  });
 
-    window.addEventListener
-    ('touchend', function (event) {
-        finalTouchX = event.
-        changedTouches[0].clientX;
-        finalTouchY = event.
-        changedTouches[0].clientY;
+  window.addEventListener("touchend", function (event) {
+    finalTouchX = event.changedTouches[0].clientX;
+    finalTouchY = event.changedTouches[0].clientY;
 
-        
-        handleTouch(initialTouchX,
-        finalTouchX, swipeLeft, swipeRight);
-    });
+    handleTouch(initialTouchX, finalTouchX, swipeLeft, swipeRight);
+  });
 };
-
