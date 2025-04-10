@@ -184,6 +184,7 @@ for (let i = 0; i < totalImages; i++) {
   displayImages[i].alt = images
     .item(i)
     .getAttribute("alt");
+    
   //console.log("displayiamges", displayImages[i]);
 }
 
