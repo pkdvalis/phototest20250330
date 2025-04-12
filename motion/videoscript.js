@@ -12,7 +12,7 @@ const totalImages = document.querySelectorAll("img").length;
 let curImageDisplay;
 const modal = document.querySelector(".overlay");
 
-
+/*
 const pageTransition = () => {
   const links = document.querySelectorAll("a");
   links.forEach((link) => {
@@ -31,6 +31,7 @@ const pageTransition = () => {
 
 
 document.addEventListener("DOMContentLoaded", pageTransition);
+*/
 
 document.addEventListener("keydown", (e) => {
   //load text
@@ -94,14 +95,13 @@ function imgtoDiv() {
   //add images to div columns
   for (let i = 0; i < totalImages; i += columns) {
     for (let column = 1; column <= columns; column++) {
-  
       let image = i + column - 1;
       if (images.item(image)) {
         images.item(image).remove();
         images.item(image).onclick = function () {
           displayImg(image);
         };
-        
+
         document.getElementById("col" + column).appendChild(images.item(image));
       }
     }
@@ -116,27 +116,28 @@ window.addEventListener("resize", () => {
 });
 
 function closeModal(e) {
-  let tmp = document.querySelector("#displayimage")
+  let tmp = document.querySelector("#displayimage");
   tmp.src = "";
-  console.log(tmp)
+  console.log(tmp);
   modal.classList.add("hide");
 }
 
 function displayImg(i) {
   curImageDisplay = i;
-  console.log(vw, (vw > 480));
+  console.log(vw, vw > 480);
 
   modal.innerHTML = `
     <p class="close" onclick="closeModal()">Esc</p>
     <div class="videoBox">
-        <iframe id="displayimage" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"></iframe>
+        <iframe id="displayimage" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media">
+        </iframe>
         </div>
+        <p id="caption">${displayImages[i].alt}</p>
        
     `;
 
-    
   let displayImage = document.querySelector("#displayimage");
-  console.log("displayImages[i].vid",displayImages[i].vid)
+  console.log("displayImages[i].vid", displayImages[i].vid);
   displayImage.src = displayImages[i].vid;
 
   modal.classList.remove("hide");
@@ -167,16 +168,15 @@ imgtoDiv();
 for (let i = 0; i < totalImages; i++) {
   displayImages[i] = new Image();
   //console.log(displayImages[i],images.item(i))
-  displayImages[i].vid = images
-    .item(i)
-    .getAttribute("vid");
-    
+  displayImages[i].vid = images.item(i).getAttribute("vid");
+
+  displayImages[i].alt = images.item(i).getAttribute("alt");
+
   console.log("displayiamges", displayImages[i]);
 }
 
-
 //mobile swipe
-
+/*
 var initialTouchX, initialTouchY,
  finalTouchX, finalTouchY;
 var swipeThreshold = 50; 
@@ -239,3 +239,4 @@ window.onload = function () {
     });
 };
 
+*/
