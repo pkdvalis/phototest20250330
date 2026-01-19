@@ -1,16 +1,17 @@
 let vw = Math.max(
   document.documentElement.clientWidth || 0,
-  window.innerWidth || 0
+  window.innerWidth || 0,
 );
 let vh = Math.max(
   document.documentElement.clientHeight || 0,
-  window.innerHeight || 0
+  window.innerHeight || 0,
 );
 const images = document.querySelectorAll("img");
 let displayImages = [];
 const totalImages = document.querySelectorAll("img").length;
 let curImageDisplay;
 const modal = document.querySelector(".overlay");
+urlnum = window.location.href.split("?")[1];
 
 /*
 const pageTransition = () => {
@@ -56,11 +57,11 @@ function showMobileMenu() {
 function imgtoDiv() {
   vw = Math.max(
     document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
+    window.innerWidth || 0,
   );
   vh = Math.max(
     document.documentElement.clientHeight || 0,
-    window.innerHeight || 0
+    window.innerHeight || 0,
   );
 
   if (vw <= 480) {
@@ -123,6 +124,7 @@ function closeModal(e) {
 }
 
 function displayImg(i) {
+  console.log("i", i);
   curImageDisplay = i;
   console.log(vw, vw > 480);
 
@@ -151,7 +153,7 @@ function displayImg(i) {
         closeModal(e);
       }
     },
-    false
+    false,
   );
 }
 
@@ -172,8 +174,10 @@ for (let i = 0; i < totalImages; i++) {
 
   displayImages[i].alt = images.item(i).getAttribute("alt");
 
-  console.log("displayiamges", displayImages[i]);
+  console.log("displayimages", displayImages[i]);
 }
+
+if (urlnum) displayImg(urlnum);
 
 //mobile swipe
 /*
