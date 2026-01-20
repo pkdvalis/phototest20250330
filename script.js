@@ -12,6 +12,7 @@ const totalImages = document.querySelectorAll("img").length;
 let curImageDisplay;
 const modal = document.querySelector(".overlay");
 let arg = window.location.href.split("?")[1];
+let section = window.location.href.split("/")[3];
 
 //fadeout page transitions
 /*
@@ -119,7 +120,7 @@ window.addEventListener("resize", () => {
 
 function closeModal(e) {
   modal.classList.add("hide");
-  window.history.replaceState("", "", `/`);
+  window.history.replaceState("", "", `/${section}`);
 }
 
 function displayImg(i) {
@@ -168,7 +169,7 @@ function displayImg(i) {
   // Source - https://stackoverflow.com/a
   // Posted by David Murdoch, modified by community. See post 'Timeline' for change history
   // Retrieved 2026-01-19, License - CC BY-SA 4.0
-  window.history.replaceState("", "", `/?${i}`);
+  window.history.replaceState("", "", `/${section}/?${i}`);
 }
 
 function nextImage() {
