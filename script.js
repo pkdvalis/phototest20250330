@@ -1,16 +1,17 @@
 let vw = Math.max(
   document.documentElement.clientWidth || 0,
-  window.innerWidth || 0
+  window.innerWidth || 0,
 );
 let vh = Math.max(
   document.documentElement.clientHeight || 0,
-  window.innerHeight || 0
+  window.innerHeight || 0,
 );
 const images = document.querySelectorAll("img");
 let displayImages = [];
 const totalImages = document.querySelectorAll("img").length;
 let curImageDisplay;
 const modal = document.querySelector(".overlay");
+let arg = window.location.href.split("?")[1];
 
 //fadeout page transitions
 /*
@@ -56,11 +57,11 @@ function showMobileMenu() {
 function imgtoDiv() {
   vw = Math.max(
     document.documentElement.clientWidth || 0,
-    window.innerWidth || 0
+    window.innerWidth || 0,
   );
   vh = Math.max(
     document.documentElement.clientHeight || 0,
-    window.innerHeight || 0
+    window.innerHeight || 0,
   );
 
   //mobile device
@@ -118,6 +119,7 @@ window.addEventListener("resize", () => {
 
 function closeModal(e) {
   modal.classList.add("hide");
+  window.history.replaceState("", "", `/`);
 }
 
 function displayImg(i) {
@@ -161,8 +163,12 @@ function displayImg(i) {
         closeModal(e);
       }
     },
-    false
+    false,
   );
+  // Source - https://stackoverflow.com/a
+  // Posted by David Murdoch, modified by community. See post 'Timeline' for change history
+  // Retrieved 2026-01-19, License - CC BY-SA 4.0
+  window.history.replaceState("", "", `/?${i}`);
 }
 
 function nextImage() {
@@ -185,6 +191,8 @@ for (let i = 0; i < totalImages; i++) {
 
   displayImages[i].alt = images.item(i).getAttribute("alt");
 }
+
+if (arg) displayImg(parseInt(arg));
 
 //mobile swipe
 /*

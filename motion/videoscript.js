@@ -117,10 +117,8 @@ window.addEventListener("resize", () => {
 });
 
 function closeModal(e) {
-  let tmp = document.querySelector("#displayimage");
-  tmp.src = "";
-  console.log(tmp);
   modal.classList.add("hide");
+  window.history.replaceState("", "", `/motion/`);
 }
 
 function displayImg(i) {
@@ -155,6 +153,7 @@ function displayImg(i) {
     },
     false,
   );
+  window.history.replaceState("", "", `/motion/?${i}`);
 }
 
 function nextImage() {
@@ -177,7 +176,7 @@ for (let i = 0; i < totalImages; i++) {
   console.log("displayimages", displayImages[i]);
 }
 
-if (urlnum) displayImg(urlnum);
+if (urlnum) displayImg(parseInt(urlnum));
 
 //mobile swipe
 /*
