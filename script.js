@@ -169,7 +169,11 @@ function displayImg(i) {
   // Source - https://stackoverflow.com/a
   // Posted by David Murdoch, modified by community. See post 'Timeline' for change history
   // Retrieved 2026-01-19, License - CC BY-SA 4.0
-  window.history.replaceState("", "", `/${section}/?${i}`);
+  window.history.replaceState(
+    "",
+    "",
+    `${section ? "/" + section + "/?" + i : "/?" + i}`,
+  );
 }
 
 function nextImage() {
